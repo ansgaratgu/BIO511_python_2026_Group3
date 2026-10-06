@@ -4,7 +4,6 @@ import sys
 
 file_path = sys.argv[1]
 
-os.path.basename(file_path) = base_name
+base_name = os.path.basename(file_path)
 
 print(base_name)
-
