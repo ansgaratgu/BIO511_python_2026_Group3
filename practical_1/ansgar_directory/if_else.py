@@ -42,19 +42,21 @@ print("sample_A" in read_counts) # prints True
 print(read_counts["sample_A"])
 
 # assign the value of sample_A to the sample variable
-sample = read_counts["sample_A"]
+# sample = read_counts["sample_A"]
 
 sample = "sample_A"
 
 # double-check it worked
 print(sample)
 
+passed_qc = True
+
 if sample not in read_counts:
     print("Unknown sample")
-elif sample == None:
+elif read_counts[sample] == None:
     print("Sequencing failed")
-elif int(sample) >= 1000000: ????????
-    print("Enough reads")
+elif read_counts[sample] >= 1000000 and passed_qc == True: 
+    print("Ready for analysis")
 else:
     print("Too few reads")
 
