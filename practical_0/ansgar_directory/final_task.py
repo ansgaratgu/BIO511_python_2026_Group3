@@ -1,7 +1,6 @@
 # make the script print the basename of a file
-
-import sys
 import os
+import sys
 
 file_path = sys.argv[1]
 
