@@ -93,7 +93,7 @@ bacteria_to_patients = {}
 
 for bacteria in unique_bacteria:
     if bacteria not in bacteria_to_patients:
-        bacteria_to_patients[bacteria] = [] # [] creates an empty list
+        bacteria_to_patients[bacteria] = [] # [] creates an empty list with [bacteria] as key
 print(f"Dictionary with unique bacterium as keys: {bacteria_to_patients}")
 
 ### add the patients to the reverse dictionary
