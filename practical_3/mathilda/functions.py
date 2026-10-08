@@ -70,11 +70,27 @@ def aggregate(seq, mode, threshold):
                         result = n
     return result
 
-test = aggregate(nums, "sum", limit)
-print(test)
+# test = aggregate(nums, "sum", limit)
+# print(test)
 
-print(result)
+# print(result)
 
+
+###errors:
+
+
+values = ['10', '5', 'hello', '8', 'three', '2']
+
+values.append("po")
+
+for nr in values:
+    try:
+        nrint = int(nr)
+        print(nrint)
+    except ValueError: 
+        print(f"skipping invalid value: {nr}")
+        continue
+    
 
         
 
