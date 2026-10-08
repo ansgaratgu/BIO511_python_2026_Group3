@@ -13,7 +13,7 @@ loop_num = 0 #varible (a sort of total) to keep track or the loop numbers
     #if loop_num < 6: #only print task if loop number is lower then 6
         #print(f"{loop_num}. {task}") #f string to print both varibles with a dot and space in between 
     #else:
-        #break # bstop the lop when loop number reaches 6
+        #break #stop the lop when loop number reaches 6
 
 
 #while loop:
@@ -59,20 +59,26 @@ stop_position = 0
 #         print(f"in {sequence} {start_codon} is at postion {sequence.find(start_codon)} and {codon} is at position {sequence.find(codon)}")
 
 
-#the in frame biologicaly correct version:
+#the in frame biologicaly correct version (unfinished and not working):
 
 for sequence in sequences:
     for frame1 in sequence:
         start_of_codon = 0
         end_of_codon = 2
-        for codon in frame1:
-            if start_codon in sequence[start_of_codon:end_of_codon]:
-                start_position = start_of_codon
-            for codon in stop_codons:
-                if codon in sequence[start_of_codon:end_of_codon]:
-                    stop_position = start_of_codon
-        start_of_codon += 3
-        end_of_codon += 3
+        for codons in frame1:
+            for codon in frame1:
+                print(start_of_codon)
+                if start_codon in sequence[start_of_codon:end_of_codon]:
+                    start_position = start_of_codon
+                    print(f"{start_codon} at position {start_of_codon} in {sequence}")
+                    for codon in stop_codons:
+                        if codon in sequence[start_of_codon:end_of_codon]:
+                            stop_position = start_of_codon
+                            print(f"{codon} at position {start_of_codon} in {sequence}")
+            start_of_codon += 3
+            end_of_codon += 3
+        
+        
     if start_position < stop_position:
        print(f"in {sequence} start codon occurs before stop codon")
 
