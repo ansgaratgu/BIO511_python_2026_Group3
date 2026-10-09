@@ -93,3 +93,5 @@ print(agg_max_100)
 # to fix this, add another else statement
 
 #### errors and try/except
+
+# I forgor
