@@ -92,8 +92,8 @@ print(f"strains found across patients: {unique_bacteria}")
 bacteria_to_patients = {}
 
 for bacteria in unique_bacteria:
-    if bacteria not in bacteria_to_patients:
-        bacteria_to_patients[bacteria] = [] # [] creates an empty list
+    if bacteria not in bacteria_to_patients: # not really necessary but nice to have I think
+        bacteria_to_patients[bacteria] = [] # [] creates an empty list with [bacteria] as key
 print(f"Dictionary with unique bacterium as keys: {bacteria_to_patients}")
 
 ### add the patients to the reverse dictionary
