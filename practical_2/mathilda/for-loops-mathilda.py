@@ -60,13 +60,15 @@ stop_position = 0
 
 
 #the in frame biologicaly correct version (unfinished and not working):
+#still working on it
+#new idea => loop over sequence to make list of codons 
 
 for sequence in sequences:
     for frame1 in sequence:
         start_of_codon = 0
         end_of_codon = 2
         for codons in frame1:
-            for codon in frame1:
+            for codon in codons:
                 print(start_of_codon)
                 if start_codon in sequence[start_of_codon:end_of_codon]:
                     start_position = start_of_codon

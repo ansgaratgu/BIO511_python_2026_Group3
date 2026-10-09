@@ -59,4 +59,22 @@ else:
     print("unknown sample")
 
 
+#GC content:
 
+sequence = "ATGCGTACTTAGCAAT"
+position = 0
+GC_count = 0
+
+
+for base in sequence:
+    if base == "G" or base == "C":
+        print(f"{base} at {position}")
+        GC_count += 1
+    position += 1
+
+print(GC_count)
+print(len(sequence))
+print(sequence[position - 1])
+GC_procent = GC_count / len(sequence) * 100 
+print(GC_procent)
+print(type(sequence))
