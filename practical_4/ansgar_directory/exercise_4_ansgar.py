@@ -12,4 +12,13 @@
 # 2: Looks at the codons in codon_list and translates it to amino acids with a .translate function ?
 # And adds the amino acids in order to a string called aa_string
 
-# 3: 
+import Bio
+from Bio.Seq import Seq
+
+# create a sequence object
+my_seq = Seq("CATGTAGACTAG")
+
+# print out some details about it
+print("seq %s is %i bases long" % (my_seq, len(my_seq)))
+print("reverse complement is %s" % my_seq.reverse_complement())
+print("protein translation is %s" % my_seq.translate())

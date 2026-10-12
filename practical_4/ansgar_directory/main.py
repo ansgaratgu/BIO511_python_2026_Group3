@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
+from premade_script import exercise_function
 from premade_script import codons
 import argparse
 import os
+import Bio
+from Bio.Seq import Seq
 
 
 def existing_file(file_path):
@@ -24,7 +27,8 @@ def main():
     print(f"Output of codons function is: {sequence_codons}") # Question 1.3
 
     # Here you need to call the exercise_function from premade_script.py
-    
+    function_call = exercise_function()
+
     # And check the output of that function
 if __name__ == "__main__":
     main()
