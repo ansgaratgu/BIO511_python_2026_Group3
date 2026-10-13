@@ -3,8 +3,7 @@ from premade_script import exercise_function
 from premade_script import codons
 import argparse
 import os
-import Bio
-from Bio.Seq import Seq
+
 
 
 def existing_file(file_path):
@@ -12,7 +11,6 @@ def existing_file(file_path):
     if not os.path.isfile(file_path):
         raise argparse.ArgumentTypeError(f"'{file_path}' is not a valid file")
     return file_path
-
 
 def main():
     # First we capture the input arguments from the command line
@@ -27,7 +25,10 @@ def main():
     print(f"Output of codons function is: {sequence_codons}") # Question 1.3
 
     # Here you need to call the exercise_function from premade_script.py
-    function_call = exercise_function()
+
+    function_call = exercise_function(sequence_codons[list(sequence_codons.keys())[0]])
+
+    print(function_call)
 
     # And check the output of that function
 if __name__ == "__main__":
