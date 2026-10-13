@@ -17,4 +17,4 @@ with open("dna.fasta") as file:
         rc_list.append(reverse_rec)
 
 # write to a new file called dna_rc.fasta
-SeqIO.write(rc_list, "dna_rc.fasta", "fasta") # why is it reversed backwards?
+SeqIO.write(rc_list, "dna_rc.fasta", "fasta")
