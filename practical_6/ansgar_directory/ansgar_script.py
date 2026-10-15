@@ -44,3 +44,50 @@ def plot_seaborn(input):
 # third_plot = plot_seaborn(peng)
 
 #### e
+from plotnine import ggplot, aes, geom_point, facet_wrap, ggtitle, geom_histogram
+
+
+# plot = (
+#     ggplot(peng, aes(x = "flipper_length_mm", y = "body_mass_g"))
+#     + geom_point()
+#     + ggtitle("Flipper length vs Body mass")
+# )
+# show the plot in a seperate little window
+# also shows exis position on mouse
+# plot.show()
+
+# save
+# plot.save("plotnine_figure.png", width = 4, height = 3, dpi = 300)
+
+#### histogram
+# plot = (ggplot(peng, aes(x = "bill_length_mm", fill = "species"))
+#         + geom_histogram()
+#         + ggtitle("Bill length sorted by species")
+#         # separate by species
+#         + facet_wrap("species")
+#         )
+
+# plot.show()
+
+#### island
+import pandas as pd
+# group by island using pandas
+df = pd.DataFrame(peng)
+# print(df)
+
+# make a series with means for the islands and round to one decimal point
+means = df.groupby("island")["body_mass_g"].mean().round(1)
+
+# save means to df
+# .map makes it add the value for each island row thingy
+df["mean_body_mass_g"] = df["island"].map(means)
+print(df)
+
+# create a bar plot where each bar represents mean bd mass for one island
+from plotnine import geom_bar
+plot = (
+    ggplot(df, aes(x = "island", y = "mean_body_mass_g"))
+    + geom_bar(stat = "summary") # stat = "summary" makes it not add upp all mean values
+)
+
+plot.show()
